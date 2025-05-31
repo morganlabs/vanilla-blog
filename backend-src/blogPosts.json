@@ -1,0 +1,27 @@
+{
+  "63V93W": {
+    "publishedAt": "2025-05-01 11:32:08",
+    "title": "JavaScript in 2025: What’s New and What’s Next?",
+    "summary": "Explore the latest features added to JavaScript in recent ECMAScript updates, including new syntax improvements, performance boosts, and evolving best practices. This post breaks down how these changes impact web development and what developers should expect in the coming year."
+  },
+  "6D11SJ": {
+    "publishedAt": "2025-04-14 15:36:06",
+    "title": "Rust vs. Go: A Modern Systems Programming Showdown",
+    "summary": "This article compares Rust and Go, highlighting their strengths and weaknesses in systems programming, concurrency, and safety. Readers will learn which language suits different project types and how each is shaping the future of backend and infrastructure development."
+  },
+  "1HQZNZ": {
+    "publishedAt": "2025-03-17 05:20:02",
+    "title": "Mastering GDScript for Godot 4: Essential Tips for Game Developers",
+    "summary": "A practical guide to GDScript’s new features in Godot 4, including improved syntax, performance enhancements, and integration with the engine’s latest tools. The post offers actionable tips for both beginners and experienced developers looking to maximize productivity in game development."
+  },
+  "PSA20V": {
+    "publishedAt": "2025-04-08 10:19:47",
+    "title": "From JavaScript to Rust: Migrating a Web App for Performance and Safety",
+    "summary": "Follow a step-by-step journey of migrating a critical web application component from JavaScript to Rust using WebAssembly. The post covers the motivations, challenges, and measurable performance gains, offering advice for teams considering a similar transition."
+  },
+  "86M1IM": {
+    "publishedAt": "2025-04-16 19:18:58",
+    "title": "Building High-Performance APIs with Go: Best Practices and Pitfalls",
+    "summary": "Discover how Go’s simplicity and concurrency model make it ideal for building scalable APIs. This article outlines best practices for structuring Go projects, handling errors, and optimizing performance, along with common mistakes to avoid for robust backend development."
+  }
+}
