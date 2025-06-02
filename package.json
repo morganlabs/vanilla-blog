@@ -9,5 +9,8 @@
   },
   "author": "Morgan Jones <me@morganlabs.dev>",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
 }

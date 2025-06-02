@@ -12,6 +12,7 @@ const mimeTypes = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".gif": "image/gif",
+  ".ico": "image/ico",
 };
 
 const __filename = fileURLToPath(import.meta.url);
@@ -94,7 +95,7 @@ export default class APIServer {
 
   returnJSON(res, status, json) {
     // Set type to JSON
-    res.setHeader("content-Type", "Application/JSON");
+    res.setHeader("Content-Type", "Application/JSON");
 
     // Set status code
     res.statusCode = status;

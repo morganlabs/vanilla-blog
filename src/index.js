@@ -17,18 +17,20 @@ server.GET("/api/posts", (req, res, database) => {
   const postId = reqUrl.query.id;
 
   if (postId) {
-    const post = database.getPost(postId);
-    if (!post) {
-      return server.returnError(
-        res,
-        404,
-        `Post with ID ${postId} does not exist.`,
-      );
-    }
-
-    return server.returnJSON(res, 200, post);
+    database.getPost(postId, (err, post) => {
+      if (err)
+        return server.returnError(
+          res,
+          404,
+          `Post with ID ${postId} does not exist.`,
+        );
+      return server.returnJSON(res, 200, post);
+    });
+    return;
   }
 
-  const posts = Object.fromEntries(database.getPosts());
-  server.returnJSON(res, 200, posts);
+  database.getPosts((err, posts) => {
+    if (err) return server.returnError(err);
+    server.returnJSON(res, 200, posts);
+  });
 });

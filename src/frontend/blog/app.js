@@ -1,19 +1,20 @@
 const blogPostsContainer = document.getElementById("blog-posts");
 
 fetch("http://127.0.0.1:1234/api/posts").then(async (posts) => {
-  const blogPosts = Object.entries(await posts.json());
+  const blogPosts = await posts.json();
+  console.log(blogPosts);
 
   for (const blogPost of blogPosts) {
     makeBlogPost(blogPost);
   }
 });
 
-function makeBlogPost([id, post]) {
+function makeBlogPost(post) {
   const newPost = document.createElement("article");
   const date = formatDate(new Date(post.publishedAt));
   newPost.classList = ["blog-post"];
   newPost.innerHTML = `
-     <a class="button" href="./posts?id=${id}">
+     <a class="button" href="./posts?id=${post.id}">
        <span class="date">${date}</span>
        <h2>${post.title}</h2>
        <p class="summary">${post.summary}</p>
