@@ -49,18 +49,18 @@ func (database *Database) Exec(sql string) (sql.Result, error) {
 	return result, nil
 }
 
-func (database *Database) NewPost(title string, summary string, content string, publishedAt string) (sql.Result, error) {
+func (database *Database) NewPost(title string, summary string, content string, publishedAt string) (string, error) {
 	id := uuid.New().String()
-	result, err := database.Exec(fmt.Sprintf(
+	_, err := database.Exec(fmt.Sprintf(
 		`INSERT INTO posts (id, title, summary, content, publishedAt) VALUES ("%s", "%s", "%s", "%s", "%s")`,
 		id, title, summary, content, publishedAt,
 	))
 
 	if err != nil {
-		return nil, err
+		return "err", err
 	}
 
-	return result, nil
+	return id, nil
 }
 
 func (database *Database) GetAllPosts() ([]PostSummary, error) {
