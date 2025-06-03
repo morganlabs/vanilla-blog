@@ -1,7 +1,7 @@
 # Vanilla HTML Blog
 
-This is a simple HTML blog built with Vanilla HTML, CSS and JS, and a backend
-API written in Rust.
+This is a simple HTML blog built with Vanilla HTML, CSS and JS, and a
+Webserver/API written in Go.
 
 ## Why?
 
