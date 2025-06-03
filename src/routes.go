@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"sort"
 	"time"
 )
 
@@ -33,11 +34,17 @@ func getAllPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	sort.Slice(posts, func(i, j int) bool {
+		t1, _ := time.Parse("Mon Jan _2 15:04:05 2006", posts[i].PublishedAt)
+		t2, _ := time.Parse("Mon Jan _2 15:04:05 2006", posts[j].PublishedAt)
+		return t1.After(t2)
+	})
+
 	writeJSON(w, 200, posts)
 }
 
 func getPostFromID(w http.ResponseWriter, r *http.Request) {
-	id := r.URL.Path[len("/api/posts/"):]            // Extract the URL Slug from the path
+	id := r.PathValue("id")                          // Get the query param "id"
 	toHTML := r.URL.Query().Get("toHTML") != "false" // Always convert MD to HTML by default
 	post, err := database.GetPost(id, toHTML)
 

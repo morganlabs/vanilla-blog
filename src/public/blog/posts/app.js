@@ -6,15 +6,17 @@ const title = document.getElementById("title");
 const summary = document.getElementById("summary");
 const content = document.getElementById("content");
 
-fetch(`http://127.0.0.1:1234/api/posts?id=${id}`).then(async (postRes) => {
+fetch(`http://127.0.0.1:1234/api/posts/${id}`).then(async (postRes) => {
   const post = await postRes.json();
   const dateObj = new Date(post.publishedAt);
   const dateStr = formatDate(dateObj);
 
+  console.log(post);
+
   date.innerText = dateStr;
   title.innerText = post.title;
   summary.innerText = post.summary;
-  content.innerText = post.content;
+  content.innerHTML = post.content;
 });
 
 function formatDate(dateObj) {
